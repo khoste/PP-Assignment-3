@@ -23,9 +23,9 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 	        for (x =0;x<w;x++)
 		{  
 		   float old = trap[(y*w)+x]);
-                  float new = compute_pixel(&trap[(y*w)+x]), omega, x, y, w);
-                  trap[(y*w)+x]) = new;
-                  delta += fabs(old - new);          }       
+                  printf ("from compute pixel %f    ",compute_pixel(&trap, omega, x, y, w));
+                  //trap[(y*w)+x]) = new;
+                  //delta += fabs(old - new);          }       
 	}
 	
 }

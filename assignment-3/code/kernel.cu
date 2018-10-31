@@ -31,6 +31,7 @@ while(i < iter)
                    trap[x][y] = new;
                    delta += fabs(old - new);
 		   printf('from simple delta %f',delta);
+		   i++;    
                    }
              }
      } 

@@ -21,7 +21,7 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 	for (y =0;y<h;y++)
 	      {
 	        for (x =0;x<w;x++)
-		{  printf("trap value %f          \n",*trap); }       
+		{  printf("trap value %f          \n",trap[(y*w)+x]); }       
 	}
 	
 }

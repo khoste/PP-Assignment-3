@@ -19,7 +19,7 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 	// implement me
    	const int t_ID = threadIdx.x + blockIdx.y * blockDim.x;
 
-
+  printf ("hi from simple ");
   if (threadIdx.x == 4 && blockIdx.y == 3){
   	// printf("t_Id=",t_ID);
   int py = threadIdx.x;

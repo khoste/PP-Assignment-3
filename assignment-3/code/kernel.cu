@@ -38,6 +38,7 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
  */
 __global__ void rb(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
+	 printf ("hi from rb ");
 }
 
 /*
@@ -45,4 +46,5 @@ __global__ void rb(float *trap, int h, int w, float omega, float epsilon, int it
  */
 __global__ void dbuf(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	//implement me
+	printf ("hi from dbuf ");
 }

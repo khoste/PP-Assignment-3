@@ -18,9 +18,9 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
   
-printf("this is trap %f\n",*trap);
+printf("this is trap %f\n",trap);
 
-printf("this is delta %f\n", *delta);
+printf("this is delta %f\n", delta);
  
 }
 

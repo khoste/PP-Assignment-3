@@ -17,8 +17,12 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
  */
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
-                 printf('trap value %f          \n',*trap);       
-          
+        int x, y;
+	for (y =0;y<h;i++)
+	      {
+	        for (y =0;y<h;i++)
+		{  printf("trap value %f          \n",(*trap)[x][y]); }       
+	}
 	
 }
 

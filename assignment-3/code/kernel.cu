@@ -18,9 +18,9 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
         int x, y;
-	for (y =0;y<h;i++)
+	for (y =0;y<h;y++)
 	      {
-	        for (y =0;y<h;i++)
+	        for (x =0;x<w;x++)
 		{  printf("trap value %f          \n",(*trap)[x][y]); }       
 	}
 	

@@ -25,7 +25,7 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 		   float old = trap[(y*w)+x]);
                   float new = compute_pixel(*trap, omega, x, y, w);
                   trap[(y*w)+x]) = new;
-                  *delta += fabs(old - new);          }       
+                  delta += fabs(old - new);          }       
 	}
 	
 }

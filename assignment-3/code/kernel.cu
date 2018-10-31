@@ -25,15 +25,16 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
   int py = threadIdx.x;
   int px = blockIdx.y;
   // if(blockIdx.y == 5 && threadIdx.x == 3){
-  	printf("threadIdx.x=%d, blockIdx.y=%d, blockDim.x=%d, t_ID=%d, px=%d, py=%d\n",threadIdx.x, blockIdx.y, blockDim.x, t_ID, px, py);
-  	trap1[t_ID] = compute_pixel(trap, omega, py, px, w);
+  	 printf("threadIdx.x=%d, blockIdx.y=%d, blockDim.x=%d, t_ID=%d, px=%d, py=%d\n",threadIdx.x, blockIdx.y, blockDim.x, t_ID, px, py);
+         printf ("This is from colonel");  	
+	 trap1[t_ID] = compute_pixel(trap, omega, py, px, w);
   	// printf("trap[%d]=%f\n", t_ID, trap[t_ID]);
   	delta=fabs(trap1[t_ID]-trap[t_ID]);
 	
 }
 
 /*
- * rb
+ * rbshi 
  */
 __global__ void rb(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me

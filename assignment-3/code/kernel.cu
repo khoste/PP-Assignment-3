@@ -26,9 +26,9 @@ while(i < iter)
         for (y = 1; y < h - 1; y++) 
            {  
               for (x = 1; x < w - 1; x++) {
-                   float old = trap[x][y];
-                   float new = compute_pixel(trap, omega, x, y,  w);
-                   trap[x][y] = new;
+                   float old = (*trap)[x][y];
+                   float new = compute_pixel(&trap, omega, x, y,  w);
+                   (*trap)[x][y] = new;
                    delta += fabs(old - new);
 		   printf('from simple delta %f',delta);
 		   i++;    

@@ -18,7 +18,7 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
   
-int i = 0;
+int i = 0,x,y;
 printf('from simple');
 while(i < iter)
  {
@@ -26,8 +26,8 @@ while(i < iter)
         for (y = 1; y < h - 1; y++) 
            {  
               for (x = 1; x < w - 1; x++) {
-                   double old = trap[x][y];
-                   double new = compute_pixel(trap, omega, x, y,  w);
+                   float old = trap[x][y];
+                   float new = compute_pixel(trap, omega, x, y,  w);
                    trap[x][y] = new;
                    delta += fabs(old - new);
 		   printf('from simple delta %f',delta);

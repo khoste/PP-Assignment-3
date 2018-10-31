@@ -19,11 +19,7 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 	// implement me
   
 printf("this is trap %f\n",*trap);
-printf("this is h %d\n",h);
-printf("this is w %d\n",w);
-printf("this is omega %f\n",omega);
-printf("this is epsilon %f\n",epsilon);
-printf("this is iter %d\n", iter);
+
 printf("this is delta %f\n", *delta);
  
 }

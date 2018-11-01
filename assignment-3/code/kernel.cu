@@ -18,14 +18,18 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
         int x, y;
+	int it = 0;
+	while (it < iter)
 	for (y =0;y<h;y++)
 	      {
 	        for (x =0;x<w;x++)
 		{  
-		   float old = trap[(y*w)+x]);
-                  printf ("from compute pixel %f    ",compute_pixel(&trap, omega, x, y, w));
-                  //trap[(y*w)+x]) = new;
-                  //delta += fabs(old - new);          }       
+		  float old = trap[(y*w)+x];
+                  float newvalue  =  compute_pixel(trap, omega, x, y, w);
+                  //printf("new is %f", newvalue);
+                  trap[(y*w)+x] = newvalue;
+                 *delta += fabs(old - newvalue);
+		}  
 	}
 	
 }

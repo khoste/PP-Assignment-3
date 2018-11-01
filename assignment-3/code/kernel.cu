@@ -20,10 +20,10 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
         const int tx = threadIdx.x + (blockIdx.x * blockDim.x);
 
 	// Calculating the X and Y pixel coordinates, wouldn't need to do this if the kernel was invoked with a 2D grid of threads
-	int ax = tx % size;
-	int ay = (tx - ax) / size;
+	int ax = tx % 300;
+	int ay = (tx - ax) / 300;
 
-	result[tx] = solve(x[ax], y[ay]);
+	
 	int it = 0;
 	while (it < iter)
 	for (y =0;y<h;y++)

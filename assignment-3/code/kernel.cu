@@ -17,17 +17,23 @@ __device__ inline float compute_pixel(float *trap, float omega, int x, int y, in
  */
 __global__ void simple(float *trap, int h, int w, float omega, float epsilon, int iter, float *delta) {
 	// implement me
-        int x, y;
+        const int tx = threadIdx.x + (blockIdx.x * blockDim.x);
+
+	// Calculating the X and Y pixel coordinates, wouldn't need to do this if the kernel was invoked with a 2D grid of threads
+	int ax = tx % size;
+	int ay = (tx - ax) / size;
+
+	result[tx] = solve(x[ax], y[ay]);
 	int it = 0;
 	while (it < iter)
 	for (y =0;y<h;y++)
 	      {
 	        for (x =0;x<w;x++)
 		{  
-		  float old = trap[(y*w)+x];
-                  float newvalue  =  compute_pixel(trap, omega, x, y, w);
+		  float old[] = trap[tx];
+                  float newvalue[]  =  compute_pixel(trap, omega, x[ax], y[ay], w);
                   //printf("new is %f", newvalue);
-                  trap[(y*w)+x] = newvalue;
+                  trap[tx] = newvalue;
                  *delta += fabs(old - newvalue);
 		}  
 	}

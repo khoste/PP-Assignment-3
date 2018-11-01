@@ -100,7 +100,7 @@ def frost_trap(kernel_func, args, ver):
     
     while delta <= epsilon:
         # experiment with different block and grid sizes
-        kernel_func(trap, args.height, args.width, args.omega, epsilon, args.iter, cuda.Out(delta), block=(1, args.height, 1), grid=(args.width,1,1))
+        kernel_func(trap, args.height, args.width, args.omega, epsilon, args.iter, cuda.Out(delta), block=(1, 300, 1), grid=(300,1,1))
         vis.update()
 
     t2 = timeit.default_timer()

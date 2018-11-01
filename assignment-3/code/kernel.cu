@@ -23,20 +23,17 @@ __global__ void simple(float *trap, int h, int w, float omega, float epsilon, in
 	int ax = tx % 300;
 	int ay = (tx - ax) / 300;
 
-	
-	int it = 0;
+        int it = 0;
 	while (it < iter)
-	for (y =0;y<h;y++)
-	      {
-	        for (x =0;x<w;x++)
-		{  
-		  float old[] = trap[tx];
-                  float newvalue[]  =  compute_pixel(trap, omega, x[ax], y[ay], w);
+	   {  
+		  float old = trap[tx];
+                  float newvalue  =  compute_pixel(trap, omega, ax, ay, w);
                   //printf("new is %f", newvalue);
                   trap[tx] = newvalue;
                  *delta += fabs(old - newvalue);
-		}  
-	}
+		 printf("the value of delta is ", *delta); 
+   }		  
+	
 	
 }
 
